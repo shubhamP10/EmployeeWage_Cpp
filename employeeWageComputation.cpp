@@ -1,8 +1,15 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <fstream>
 
 using namespace std;
+
+void writeToFile(int wage){
+    ofstream writer;
+    writer.open("EmployeeWageData.txt" , ios::out | ios::trunc);
+    writer << "Monthly Wage: " << wage << endl;
+}
 
 int main(){
     int day = 1;
@@ -40,6 +47,7 @@ int main(){
         day++;
     }
     monthlyWage = totalWorkingHours * WAGE_PER_HOUR;
-    cout << "Monthly Wage: " << monthlyWage << endl;   
+    cout << "Monthly Wage: " << monthlyWage << endl; 
+    writeToFile(monthlyWage);  
     return 0;
 }
