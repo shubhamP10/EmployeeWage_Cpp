@@ -5,32 +5,44 @@
 using namespace std;
 
 int main(){
+    int day = 1;
     int WAGE_PER_HOUR = 20;
-    int HOURS_PER_DAY = 8;
-    int PART_TIME_HOURS = 4;
+    int WORK_HOURS = 0;
+    int DAYS_IN_MONTH = 20;
     int wage = 0;
+    int monthlyWage = 0;
     srand(time(0));
-    int isPresent = (rand() % 2);
-
-    if(isPresent == 1){
-        cout << "Employee is Present" << endl;
-        int jobType = (rand() % 2) + 1;
-        switch (jobType)
-        {
-        case 1:
-            cout << "Part Time" << endl;
-            wage = WAGE_PER_HOUR * PART_TIME_HOURS;
-            break;
-        case 2:
-            cout << "Full Time" << endl;
-            wage = WAGE_PER_HOUR * HOURS_PER_DAY;
-            break;
-        default:
-            break;
+    
+    while (day <= DAYS_IN_MONTH)
+    {
+        int isPresent = (rand() % 2);
+        if(isPresent == 1){
+            int jobType = (rand() % 2) + 1;
+            switch (jobType)
+            {
+            case 1:
+                WORK_HOURS = 4;
+                break;
+            case 2:
+                WORK_HOURS = 8;
+                break;
+            default:
+                WORK_HOURS = 0;
+            }
+            wage = WORK_HOURS * WAGE_PER_HOUR;
+            monthlyWage += wage;
+            cout << "Day" << day << " Wage = " << wage << endl;
         }
-        cout << "Wage = " << wage;
+        else{
+            WORK_HOURS = 0;
+            wage = WORK_HOURS * WAGE_PER_HOUR;
+            monthlyWage += wage;
+            cout << "Day" << day << " Wage = " << wage << endl;
+        }
+            
+        day++;
     }
-    else
-        cout << "Employee is Absent" << endl;
+
+    cout << "Monthly Wage: " << monthlyWage << endl;   
     return 0;
 }
