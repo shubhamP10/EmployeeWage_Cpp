@@ -39,11 +39,7 @@ void writeToFile(Employee employee[], int size){
             writer << employee[count].id << "," << employee[count].month << "," << employee[count].monthlySalary << endl;
             count++;
         }
-    }
-    
-    
-
-    
+    }    
 }
 
 int getTotalWorkingHours(){
@@ -52,8 +48,6 @@ int getTotalWorkingHours(){
     int DAYS_IN_MONTH = 20;
     int MAX_HOURS_IN_MONTH = 100;
     int  totalWorkingDays = 0, totalWorkingHours = 0;
-    
-    
     
     while (totalWorkingHours <= MAX_HOURS_IN_MONTH && totalWorkingDays < DAYS_IN_MONTH)
     {   
@@ -89,11 +83,11 @@ int main(){
     int WAGE_PER_HOUR = 20;
     int monthlyWage = 0, totalWorkingHours = 0;
     int numOfEmp = 0, empCount = 0, monthCount = 0;
-    
 
     cout << "Enter Number of Employees in Company: " << endl;
     cin >> numOfEmp;
     Employee employee[numOfEmp];
+    
     while (monthCount < 4)
     {
         empCount = 0;
@@ -112,10 +106,7 @@ int main(){
             empCount++; 
         }  
         writeToFile(employee, numOfEmp);
-        monthCount++;
-        
-    }
-    
-    
+        monthCount++;     
+    }    
     return 0;
 }
