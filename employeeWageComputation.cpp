@@ -31,37 +31,7 @@ struct Employee
     string companyName;
 };
 
-void writeToFile(Employee employee[], int size){
-    ofstream writer;
-    ifstream reader("EmployeeData.csv");
-    reader.seekg(0, ios::end);
-    if (reader.tellg() == 0)
-    {
-        int count = 0;
-        writer.open("EmployeeData.csv" , ios::out | ios::app);
-        
-        writer << "ID,COMPANY,MONTH,SALARY" << endl;
-        while (count < size)
-        {
-            writer << employee[count].id << "," << employee[count].companyName << "," 
-                    << employee[count].month << "," << employee[count].monthlySalary << endl;
-            count++;
-        }
-    }
-    else
-    {
-        int count = 0;
-        writer.open("EmployeeData.csv" , ios::out | ios::app);
-        while (count < size)
-        {
-            writer << employee[count].id << "," << employee[count].companyName << "," 
-                    << employee[count].month << "," << employee[count].monthlySalary << endl;
-            count++;
-        }
-    }    
-}
-
-int getTotalWorkingHours(Company company){
+getTotalWorkingHours(Company company){
     srand(time(0));
     int WORK_HOURS = 0;
     int  totalWorkingDays = 0, totalWorkingHours = 0;
@@ -93,6 +63,46 @@ int getTotalWorkingHours(Company company){
     return totalWorkingHours;
 }
 
+class EmpWageBuilder{
+    public :
+    int monthlyWage;
+    Company company;
+
+    void calculateWage(){
+        monthlyWage = getTotalWorkingHours(company) * company.WORKING_HOURS_PER_MONTH;
+    }
+};
+
+void writeToFile(Employee employee[], int size){
+    ofstream writer;
+    ifstream reader("EmployeeData.csv");
+    reader.seekg(0, ios::end);
+    if (reader.tellg() == 0)
+    {
+        int count = 0;
+        writer.open("EmployeeData.csv" , ios::out | ios::app);
+        
+        writer << "ID,COMPANY,MONTH,SALARY" << endl;
+        while (count < size)
+        {
+            writer << employee[count].id << "," << employee[count].companyName << "," 
+                    << employee[count].month << "," << employee[count].monthlySalary << endl;
+            count++;
+        }
+    }
+    else
+    {
+        int count = 0;
+        writer.open("EmployeeData.csv" , ios::out | ios::app);
+        while (count < size)
+        {
+            writer << employee[count].id << "," << employee[count].companyName << "," 
+                    << employee[count].month << "," << employee[count].monthlySalary << endl;
+            count++;
+        }
+    }    
+}
+
 int main(){
     string months[] = {"Jan", "Feb", "Mar", "Apr"};
     int WAGE_PER_HOUR = 20;
@@ -107,6 +117,7 @@ int main(){
     int choice, flag = 0;
     Company company;
     Employee employee[numOfEmp];
+    EmpWageBuilder empWageBuilder;
 
     cout << "Press 1 To Enter Details, 2 for EXIT " << endl;
     while (flag == 0)
@@ -135,17 +146,16 @@ int main(){
                     while (empCount < numOfEmp)
                     {        
                         sleep(1.5);
-                        totalWorkingHours = getTotalWorkingHours(company);
-                        
-                        monthlyWage = totalWorkingHours * company.WAGE;
+                        empWageBuilder.company = company;
+                        empWageBuilder.calculateWage();
                         employee[empCount].id = empCount + 1;
-                        employee[empCount].monthlySalary = monthlyWage;
+                        employee[empCount].monthlySalary = empWageBuilder.monthlyWage;
                         employee[empCount].month = months[monthCount];
                         employee[empCount].companyName = company.companyName;
                         cout << "Employee ID: " << employee[empCount].id << endl;
                         cout << "Company Name: " << company.companyName << endl;
                         cout << "Month: " << months[monthCount] << endl;
-                        cout << "Monthly Wage: " << monthlyWage << endl;
+                        cout << "Monthly Wage: " << empWageBuilder.monthlyWage << endl;
                         empCount++; 
                     }  
                     writeToFile(employee, numOfEmp);
