@@ -7,11 +7,27 @@
 
 using namespace std;
 
+class Company{
+    public: 
+    string companyName;
+    int WAGE;
+    int WORK_DAYS;
+    int WORKING_HOURS_PER_MONTH;
+
+    Company(string name, int wage, int workDays, int hoursPerMonth){
+        companyName = name;
+        WAGE = wage;
+        WORK_DAYS = workDays;
+        WORKING_HOURS_PER_MONTH = hoursPerMonth;
+    }
+};
+
 struct Employee
 {
     int id;
     int monthlySalary;
     string month;
+    string companyName;
 };
 
 void writeToFile(Employee employee[], int size){
@@ -23,10 +39,10 @@ void writeToFile(Employee employee[], int size){
         int count = 0;
         writer.open("EmployeeData.csv" , ios::out | ios::app);
         
-        writer << "ID,MONTH,SALARY" << endl;
+        writer << "ID,COMPANY,MONTH,SALARY" << endl;
         while (count < size)
         {
-            writer << employee[count].id << "," << employee[count].month << "," << employee[count].monthlySalary << endl;
+            writer << employee[count].id << "," << employee[count].companyName << "," << employee[count].month << "," << employee[count].monthlySalary << endl;
             count++;
         }
     }
@@ -36,27 +52,23 @@ void writeToFile(Employee employee[], int size){
         writer.open("EmployeeData.csv" , ios::out | ios::app);
         while (count < size)
         {
-            writer << employee[count].id << "," << employee[count].month << "," << employee[count].monthlySalary << endl;
+            writer << employee[count].id << "," << employee[count].companyName << "," << employee[count].month << "," << employee[count].monthlySalary << endl;
             count++;
         }
     }    
 }
 
-int getTotalWorkingHours(){
+int getTotalWorkingHours(Company company){
     srand(time(0));
     int WORK_HOURS = 0;
-    int DAYS_IN_MONTH = 20;
-    int MAX_HOURS_IN_MONTH = 100;
     int  totalWorkingDays = 0, totalWorkingHours = 0;
     
-    while (totalWorkingHours <= MAX_HOURS_IN_MONTH && totalWorkingDays < DAYS_IN_MONTH)
+    while (totalWorkingHours <= company.WORKING_HOURS_PER_MONTH && totalWorkingDays < company.WORK_DAYS)
     {   
         totalWorkingDays++;
-        std::random_device rd;
-        std::mt19937 gen(rd());
-        std::uniform_int_distribution<> dis(1,9999);
-        int isPresent = (dis(gen) % 2);
+        int isPresent = (rand() % 2);
         if(isPresent == 1){
+            srand((unsigned)time(NULL));
             int jobType = (rand() % 2) + 1;
             switch (jobType)
             {
@@ -83,6 +95,25 @@ int main(){
     int WAGE_PER_HOUR = 20;
     int monthlyWage = 0, totalWorkingHours = 0;
     int numOfEmp = 0, empCount = 0, monthCount = 0;
+    
+    //Company Details
+    string companyName;
+    int WAGE;
+    int WORK_DAYS;
+    int WORKING_HOURS_PER_MONTH;
+
+    cout << "Enter Company Name: " << endl;
+    cin >> companyName;
+    cout << "Enter Wage Per Day: " << endl;
+    cin >> WAGE;
+    cout << "Enter Work Days For Month: " << endl;
+    cin >> WORK_DAYS;
+    cout << "Enter MAX Working Hours In Month: " << endl;
+    cin >> WORKING_HOURS_PER_MONTH;
+
+    Company company(companyName, WAGE, WORK_DAYS, WORKING_HOURS_PER_MONTH);
+
+    cout << company.companyName << endl;
 
     cout << "Enter Number of Employees in Company: " << endl;
     cin >> numOfEmp;
@@ -94,13 +125,15 @@ int main(){
         while (empCount < numOfEmp)
         {        
             sleep(2);
-            totalWorkingHours = getTotalWorkingHours();
+            totalWorkingHours = getTotalWorkingHours(company);
             
-            monthlyWage = totalWorkingHours * WAGE_PER_HOUR;
+            monthlyWage = totalWorkingHours * company.WAGE;
             employee[empCount].id = empCount + 1;
             employee[empCount].monthlySalary = monthlyWage;
             employee[empCount].month = months[monthCount];
+            employee[empCount].companyName = company.companyName;
             cout << "Employee ID: " << employee[empCount].id << endl;
+            cout << "Company Name: " << company.companyName << endl;
             cout << "Month: " << months[monthCount] << endl;
             cout << "Monthly Wage: " << monthlyWage << endl;
             empCount++; 
