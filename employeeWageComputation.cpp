@@ -7,13 +7,16 @@
 
 using namespace std;
 
+vector<int> dailyWageList;
+vector<int> hoursList;
+
 struct Employee
 {
     int id;
     int monthlySalary;
     string month;
     string companyName;
-    vector<int> dailyWageList;
+    int wagePerHour;
 };
 class Company{
     public: 
@@ -21,8 +24,7 @@ class Company{
     int WAGE;
     int WORK_DAYS;
     int WORKING_HOURS_PER_MONTH;
-    vector<Employee> employeeList;
-    
+
     Company(){}
 
     Company(string name, int wage, int workDays, int hoursPerMonth){
@@ -34,15 +36,13 @@ class Company{
 };
 
 
-getTotalWorkingHours(Company company, int empID){
-    cout << "Inside Calculate GTWH()" << endl;
+getTotalWorkingHours(Company company){
     srand(time(0));
     int WORK_HOURS = 0;
     int  totalWorkingDays = 0, totalWorkingHours = 0;
     
     while (totalWorkingHours <= company.WORKING_HOURS_PER_MONTH && totalWorkingDays < company.WORK_DAYS)
     {   
-        cout << "Inside GTWH While1" << endl;
         totalWorkingDays++;
         int isPresent = (rand() % 2);
         if(isPresent == 1){
@@ -63,13 +63,10 @@ getTotalWorkingHours(Company company, int empID){
         else{
             WORK_HOURS = 0;
             totalWorkingHours += WORK_HOURS;
-        }   
-        cout << "Before Operation" << endl;
-        company.employeeList.at(empID).dailyWageList.push_back(WORK_HOURS * company.WAGE);
-        // company.employeeList[empID].dailyWageList.push_back(WORK_HOURS * company.WAGE);
-        cout << "After Operation" << endl;
-        // company.employee.dailyWage[company.WORK_DAYS] = WORK_HOURS * company.WAGE;
-        // cout << "Daily Wage: " << company.employeeList[empID].dailyWage[company.WORK_DAYS] << endl; 
+        }     
+        int dailyWage = WORK_HOURS * company.WAGE;
+        dailyWageList.push_back(dailyWage);
+        hoursList.push_back(WORK_HOURS);
     }
     return totalWorkingHours;
 }
@@ -79,14 +76,14 @@ class EmpWageBuilder{
     int monthlyWage;
     Company company;
     
-    void calculateWage(int empID){
-        cout << "Inside Calculate Wage()" << endl;
-        monthlyWage = getTotalWorkingHours(company, empID) * company.WORKING_HOURS_PER_MONTH;
+    void calculateWage(){
+        monthlyWage = getTotalWorkingHours(company) * company.WORKING_HOURS_PER_MONTH;
     }
 };
 
-void writeToFile(vector<Employee> employee, int size){
+void writeToFile(Employee employee[], int workDays, int size){
     ofstream writer;
+    
     ifstream reader("EmployeeData.csv");
     reader.seekg(0, ios::end);
     if (reader.tellg() == 0)
@@ -94,11 +91,14 @@ void writeToFile(vector<Employee> employee, int size){
         int count = 0;
         writer.open("EmployeeData.csv" , ios::out | ios::app);
         
-        writer << "EMP_ID,COMPANY,DAY,WAGE_PER_HOUR,HOURS,DAILY_WAGE,MONTH" << endl;
+        writer << "EMP_ID, COMPANY, DAY, HOURS_WORKED, WAGE_PER_HOUR, DAILY_WAGE, MONTH" << endl;
         while (count < size)
         {
-            writer << employee[count].id << "," << employee[count].companyName << "," 
-                    << employee[count].month << "," << employee[count].monthlySalary << endl;
+           for (int i = 0; i < workDays; i++)
+           {
+                writer << employee[count].id << "," << employee[count].companyName << "," << i+1 << "," << hoursList[i] << ","
+                << employee[count].wagePerHour << "," << dailyWageList[i] << "," << employee[count].month << endl;
+           }           
             count++;
         }
     }
@@ -108,8 +108,11 @@ void writeToFile(vector<Employee> employee, int size){
         writer.open("EmployeeData.csv" , ios::out | ios::app);
         while (count < size)
         {
-            writer << employee[count].id << "," << employee[count].companyName << "," 
-                    << employee[count].month << "," << employee[count].monthlySalary << endl;
+            for (int i = 0; i < workDays; i++)
+           {
+                writer << employee[count].id << "," << employee[count].companyName << "," << i+1 << "," << hoursList[i] << ","
+                << employee[count].wagePerHour << "," << dailyWageList[i] << "," << employee[count].month << endl;
+           }
             count++;
         }
     }    
@@ -128,7 +131,7 @@ int main(){
     int WORKING_HOURS_PER_MONTH;
     int choice, flag = 0;
     Company company;
-    // Employee employee;
+    Employee employee[numOfEmp];
     EmpWageBuilder empWageBuilder;
 
     cout << "Press 1 To Enter Details, 2 for EXIT " << endl;
@@ -146,34 +149,34 @@ int main(){
                 cin >> company.WORK_DAYS;
                 cout << "Enter MAX Working Hours In Month: " << endl;
                 cin >> company.WORKING_HOURS_PER_MONTH;
+
+                cout << company.companyName << endl;
+
                 cout << "Enter Number of Employees in Company: " << endl;
                 cin >> numOfEmp;
                                 
                 while (monthCount < 4)
                 {
-                    cout << "Inside 1st Inner While Loop" << endl;
-                    empCount = 1;
-                    while (empCount <= numOfEmp)
-                    {       
-                        cout << "Inside 2nd Inner While Loop" << endl; 
+                    empCount = 0;
+                    while (empCount < numOfEmp)
+                    {        
                         sleep(1.5);
                         empWageBuilder.company = company;
-                        Employee employee;
-                        company.employeeList.push_back(employee);
-                        empWageBuilder.calculateWage(empCount);
-            
-                        // company.employeeList[empCount].
-                        company.employeeList[empCount].id = empCount;
-                        company.employeeList[empCount].monthlySalary = empWageBuilder.monthlyWage;
-                        company.employeeList[empCount].month = months[monthCount];
-                        company.employeeList[empCount].companyName = company.companyName;
-                        cout << "Employee ID: " << company.employeeList[empCount].id << endl;
+                        empWageBuilder.calculateWage();
+                        employee[empCount].id = empCount + 1;
+                        employee[empCount].monthlySalary = empWageBuilder.monthlyWage;
+                        employee[empCount].month = months[monthCount];
+                        employee[empCount].companyName = company.companyName;
+                        employee[empCount].wagePerHour = company.WAGE;
+                        cout << "Employee ID: " << employee[empCount].id << endl;
                         cout << "Company Name: " << company.companyName << endl;
                         cout << "Month: " << months[monthCount] << endl;
                         cout << "Monthly Wage: " << empWageBuilder.monthlyWage << endl;
                         empCount++; 
                     }  
-                    // writeToFile(company.employeeList[empCount], numOfEmp);
+                    writeToFile(employee, company.WORK_DAYS, numOfEmp);
+                    dailyWageList.clear();
+                    hoursList.clear();
                     monthCount++;     
                 }
                 monthCount = 0;
