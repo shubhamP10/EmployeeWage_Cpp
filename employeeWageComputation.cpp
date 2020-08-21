@@ -40,7 +40,7 @@ class Company{
 struct employeeWageResultSet
 {
     string companyName, month;
-    int day, dailyWage, empId; 
+    int day, dailyWage, empId, workDays; 
 };
 
 
@@ -97,7 +97,7 @@ void writeToFile(Employee employee[], int workDays, int size){
     {
         writer.seekp(0, ios::end);
         if(writer.tellg() == 0){
-            writer << "EMP_ID, COMPANY, MONTH, DAY, HOURS_WORKED, WAGE_PER_HOUR, DAILY_WAGE" << endl;
+            writer << "EMP_ID, COMPANY, MONTH, DAY, HOURS_WORKED, WAGE_PER_HOUR, DAILY_WAGE, WORK_DAYS" << endl;
 
         }
         int count = 0;
@@ -107,7 +107,7 @@ void writeToFile(Employee employee[], int workDays, int size){
            for (int i = 0; i < workDays; i++)
            {
                 writer << employee[count].id << ", "  << employee[count].companyName << ", " << employee[count].month << ", " << i+1 
-                << ", " << hoursList[i] << ", " << employee[count].wagePerHour << ", " << dailyWageList[i] << endl;
+                << ", " << hoursList[i] << ", " << employee[count].wagePerHour << ", " << dailyWageList[i] << ", " << workDays << endl;
            }           
             count++;
         }
@@ -152,6 +152,7 @@ list <employeeWageResultSet> readFile()
             employeeDetails.month = details[2];
             employeeDetails.day = stoi(details[3]);
             employeeDetails.dailyWage = stoi(details[6]);
+            employeeDetails.workDays = stoi(details[7]);
             employeeWages.push_back(employeeDetails);
         }
         
@@ -163,21 +164,30 @@ list <employeeWageResultSet> readFile()
 
 void displayEmployeeData(){
     list<employeeWageResultSet> employeeList = readFile();
-
     list<employeeWageResultSet> :: iterator itr;
 
+    int companyWage = 0;
     cout << "Enter Company Name: ";
     string companyName;
     cin >> companyName;
 
     if(employeeList.size() != 0){
         for(itr = employeeList.begin(); itr != employeeList.end(); itr++){
-            cout << (*itr).companyName << "  " << (*itr).empId << "  " << (*itr).dailyWage << "  " << (*itr).month << endl;
-        }
+            if((*itr).companyName == companyName){
+                cout << (*itr).companyName << "  " << (*itr).empId << "  " << (*itr).dailyWage << "  " << (*itr).month << endl;
+                // int workDays = (*itr).workDays;
+                // for(int i = 0; i < workDays; i++){
+                //     cout << (*itr).dailyWage << "  ";
+                //     companyWage += (*itr).dailyWage;
+                }
+            } // TODO Calculate Monthly Wage AND Comparision
+            // cout << (*itr).companyName << "  " << (*itr).empId << "  " << (*itr).dailyWage << "  " << (*itr).month << endl;
     }
     else{
         cout << "No Data!!!" << endl;
     }   
+
+    // cout << "Company Wage: " << companyWage << endl;
 }
 
 void insertEmployeeWageData(){
@@ -230,9 +240,6 @@ void insertEmployeeWageData(){
                         employee[empCount].month = months[monthCount];
                         employee[empCount].companyName = company.companyName;
                         employee[empCount].wagePerHour = company.WAGE;
-                        cout << "Employee ID: " << employee[empCount].id << endl;
-                        cout << "Company Name: " << company.companyName << endl;
-                        cout << "Month: " << months[monthCount] << endl;
                         cout << "Monthly Wage: " << empWageBuilder.monthlyWage << endl;
                         empCount++; 
                     }  
