@@ -82,16 +82,18 @@ class EmpWageBuilder{
 };
 
 void writeToFile(Employee employee[], int workDays, int size){
-    ofstream writer;
-    
-    ifstream reader("EmployeeData.csv");
-    reader.seekg(0, ios::end);
-    if (reader.tellg() == 0)
+    fstream writer;
+    writer.open("EmployeeData.csv" , ios::out | ios::app);
+
+    if(writer.is_open())
     {
+        writer.seekp(0, ios::end);
+        if(writer.tellg() == 0){
+            writer << "EMP_ID, COMPANY, DAY, HOURS_WORKED, WAGE_PER_HOUR, DAILY_WAGE, MONTH" << endl;
+
+        }
         int count = 0;
-        writer.open("EmployeeData.csv" , ios::out | ios::app);
-        
-        writer << "EMP_ID, COMPANY, DAY, HOURS_WORKED, WAGE_PER_HOUR, DAILY_WAGE, MONTH" << endl;
+        writer.seekp(0, ios::beg);
         while (count < size)
         {
            for (int i = 0; i < workDays; i++)
@@ -101,21 +103,8 @@ void writeToFile(Employee employee[], int workDays, int size){
            }           
             count++;
         }
+        writer.close();
     }
-    else
-    {
-        int count = 0;
-        writer.open("EmployeeData.csv" , ios::out | ios::app);
-        while (count < size)
-        {
-            for (int i = 0; i < workDays; i++)
-           {
-                writer << employee[count].id << "," << employee[count].companyName << "," << i+1 << "," << hoursList[i] << ","
-                << employee[count].wagePerHour << "," << dailyWageList[i] << "," << employee[count].month << endl;
-           }
-            count++;
-        }
-    }    
 }
 
 int main(){
