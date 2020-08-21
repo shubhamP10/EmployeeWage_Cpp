@@ -4,6 +4,8 @@
 #include <fstream>
 #include <unistd.h>
 #include <vector>
+#include <list>
+#include <sstream>
 
 using namespace std;
 
@@ -33,6 +35,12 @@ class Company{
         WORK_DAYS = workDays;
         WORKING_HOURS_PER_MONTH = hoursPerMonth;
     }
+};
+
+struct employeeWageResultSet
+{
+    string companyName, month;
+    int day, dailyWage, empId; 
 };
 
 
@@ -89,7 +97,7 @@ void writeToFile(Employee employee[], int workDays, int size){
     {
         writer.seekp(0, ios::end);
         if(writer.tellg() == 0){
-            writer << "EMP_ID, COMPANY, DAY, HOURS_WORKED, WAGE_PER_HOUR, DAILY_WAGE, MONTH" << endl;
+            writer << "EMP_ID, COMPANY, MONTH, DAY, HOURS_WORKED, WAGE_PER_HOUR, DAILY_WAGE" << endl;
 
         }
         int count = 0;
@@ -98,8 +106,8 @@ void writeToFile(Employee employee[], int workDays, int size){
         {
            for (int i = 0; i < workDays; i++)
            {
-                writer << employee[count].id << "," << employee[count].companyName << "," << i+1 << "," << hoursList[i] << ","
-                << employee[count].wagePerHour << "," << dailyWageList[i] << "," << employee[count].month << endl;
+                writer << employee[count].id << ", "  << employee[count].companyName << ", " << employee[count].month << ", " << i+1 
+                << ", " << hoursList[i] << ", " << employee[count].wagePerHour << ", " << dailyWageList[i] << endl;
            }           
             count++;
         }
@@ -107,7 +115,72 @@ void writeToFile(Employee employee[], int workDays, int size){
     }
 }
 
-int main(){
+vector<string> split(const string& line, char delimiter)
+{
+    vector<string> tokens;
+    string token;
+    istringstream tokenStream(line);
+    while (std::getline(tokenStream, token, delimiter))
+    {
+        tokens.push_back(token);
+    }
+    return tokens;
+}
+
+list <employeeWageResultSet> readFile() 
+{ 
+    string file = "EmployeeData.csv";
+    fstream fileStream; 
+    fileStream.open(file, ios::in);
+
+    vector<string> details; 
+    string line, word;
+
+    list<employeeWageResultSet> employeeWages;
+    getline(fileStream, line);
+    while (!fileStream.eof())
+    {
+        details.clear();
+        getline(fileStream, line);
+        stringstream s(line);
+        while (getline(s, word))
+        {
+            details = split(word, ',');
+            employeeWageResultSet employeeDetails;
+            employeeDetails.empId = stoi(details[0]);
+            employeeDetails.companyName = details[1];
+            employeeDetails.month = details[2];
+            employeeDetails.day = stoi(details[3]);
+            employeeDetails.dailyWage = stoi(details[6]);
+            employeeWages.push_back(employeeDetails);
+        }
+        
+    }
+
+    fileStream.close();   
+    return employeeWages;
+} 
+
+void displayEmployeeData(){
+    list<employeeWageResultSet> employeeList = readFile();
+
+    list<employeeWageResultSet> :: iterator itr;
+
+    cout << "Enter Company Name: ";
+    string companyName;
+    cin >> companyName;
+
+    if(employeeList.size() != 0){
+        for(itr = employeeList.begin(); itr != employeeList.end(); itr++){
+            cout << (*itr).companyName << "  " << (*itr).empId << "  " << (*itr).dailyWage << "  " << (*itr).month << endl;
+        }
+    }
+    else{
+        cout << "No Data!!!" << endl;
+    }   
+}
+
+void insertEmployeeWageData(){
     string months[] = {"Jan", "Feb", "Mar", "Apr"};
     int WAGE_PER_HOUR = 20;
     int monthlyWage = 0, totalWorkingHours = 0;
@@ -176,7 +249,27 @@ int main(){
                 flag = 1;
                 break;
         }
+    }        
+}
+
+int main(){
+    int flag = 0, choice;
+    while (flag == 0)
+    {
+        cout << "Perss: " << "\n1. Insert Employee Wage\n2. Display Data\n3. Exit" << endl;
+        cin >> choice;
+        switch(choice){
+            case 1:
+                insertEmployeeWageData();
+                break;
+            case 2:
+                displayEmployeeData();
+                break;
+            case 3:
+                flag = 1;
+                break;
+        }
     }
-        
+    
     return 0;
 }

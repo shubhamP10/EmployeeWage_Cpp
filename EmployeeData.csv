@@ -1,241 +1,201 @@
-EMP_ID, COMPANY, DAY, HOURS_WORKED, WAGE_PER_HOUR, DAILY_WAGE, MONTH
-1,BridgeLabz,1,0,15,0,Jan
-1,BridgeLabz,2,0,15,0,Jan
-1,BridgeLabz,3,0,15,0,Jan
-1,BridgeLabz,4,8,15,120,Jan
-1,BridgeLabz,5,4,15,60,Jan
-1,BridgeLabz,6,0,15,0,Jan
-1,BridgeLabz,7,0,15,0,Jan
-1,BridgeLabz,8,0,15,0,Jan
-1,BridgeLabz,9,4,15,60,Jan
-1,BridgeLabz,10,0,15,0,Jan
-1,BridgeLabz,11,8,15,120,Jan
-1,BridgeLabz,12,0,15,0,Jan
-1,BridgeLabz,13,0,15,0,Jan
-1,BridgeLabz,14,0,15,0,Jan
-1,BridgeLabz,15,8,15,120,Jan
-1,BridgeLabz,16,0,15,0,Jan
-1,BridgeLabz,17,0,15,0,Jan
-1,BridgeLabz,18,8,15,120,Jan
-1,BridgeLabz,19,0,15,0,Jan
-1,BridgeLabz,20,0,15,0,Jan
-2,BridgeLabz,1,0,15,0,Jan
-2,BridgeLabz,2,0,15,0,Jan
-2,BridgeLabz,3,0,15,0,Jan
-2,BridgeLabz,4,8,15,120,Jan
-2,BridgeLabz,5,4,15,60,Jan
-2,BridgeLabz,6,0,15,0,Jan
-2,BridgeLabz,7,0,15,0,Jan
-2,BridgeLabz,8,0,15,0,Jan
-2,BridgeLabz,9,4,15,60,Jan
-2,BridgeLabz,10,0,15,0,Jan
-2,BridgeLabz,11,8,15,120,Jan
-2,BridgeLabz,12,0,15,0,Jan
-2,BridgeLabz,13,0,15,0,Jan
-2,BridgeLabz,14,0,15,0,Jan
-2,BridgeLabz,15,8,15,120,Jan
-2,BridgeLabz,16,0,15,0,Jan
-2,BridgeLabz,17,0,15,0,Jan
-2,BridgeLabz,18,8,15,120,Jan
-2,BridgeLabz,19,0,15,0,Jan
-2,BridgeLabz,20,0,15,0,Jan
-3,BridgeLabz,1,0,15,0,Jan
-3,BridgeLabz,2,0,15,0,Jan
-3,BridgeLabz,3,0,15,0,Jan
-3,BridgeLabz,4,8,15,120,Jan
-3,BridgeLabz,5,4,15,60,Jan
-3,BridgeLabz,6,0,15,0,Jan
-3,BridgeLabz,7,0,15,0,Jan
-3,BridgeLabz,8,0,15,0,Jan
-3,BridgeLabz,9,4,15,60,Jan
-3,BridgeLabz,10,0,15,0,Jan
-3,BridgeLabz,11,8,15,120,Jan
-3,BridgeLabz,12,0,15,0,Jan
-3,BridgeLabz,13,0,15,0,Jan
-3,BridgeLabz,14,0,15,0,Jan
-3,BridgeLabz,15,8,15,120,Jan
-3,BridgeLabz,16,0,15,0,Jan
-3,BridgeLabz,17,0,15,0,Jan
-3,BridgeLabz,18,8,15,120,Jan
-3,BridgeLabz,19,0,15,0,Jan
-3,BridgeLabz,20,0,15,0,Jan
-1,BridgeLabz,1,8,15,120,Feb
-1,BridgeLabz,2,8,15,120,Feb
-1,BridgeLabz,3,0,15,0,Feb
-1,BridgeLabz,4,0,15,0,Feb
-1,BridgeLabz,5,0,15,0,Feb
-1,BridgeLabz,6,0,15,0,Feb
-1,BridgeLabz,7,4,15,60,Feb
-1,BridgeLabz,8,0,15,0,Feb
-1,BridgeLabz,9,0,15,0,Feb
-1,BridgeLabz,10,0,15,0,Feb
-1,BridgeLabz,11,0,15,0,Feb
-1,BridgeLabz,12,8,15,120,Feb
-1,BridgeLabz,13,0,15,0,Feb
-1,BridgeLabz,14,0,15,0,Feb
-1,BridgeLabz,15,8,15,120,Feb
-1,BridgeLabz,16,0,15,0,Feb
-1,BridgeLabz,17,4,15,60,Feb
-1,BridgeLabz,18,4,15,60,Feb
-1,BridgeLabz,19,0,15,0,Feb
-1,BridgeLabz,20,0,15,0,Feb
-2,BridgeLabz,1,8,15,120,Feb
-2,BridgeLabz,2,8,15,120,Feb
-2,BridgeLabz,3,0,15,0,Feb
-2,BridgeLabz,4,0,15,0,Feb
-2,BridgeLabz,5,0,15,0,Feb
-2,BridgeLabz,6,0,15,0,Feb
-2,BridgeLabz,7,4,15,60,Feb
-2,BridgeLabz,8,0,15,0,Feb
-2,BridgeLabz,9,0,15,0,Feb
-2,BridgeLabz,10,0,15,0,Feb
-2,BridgeLabz,11,0,15,0,Feb
-2,BridgeLabz,12,8,15,120,Feb
-2,BridgeLabz,13,0,15,0,Feb
-2,BridgeLabz,14,0,15,0,Feb
-2,BridgeLabz,15,8,15,120,Feb
-2,BridgeLabz,16,0,15,0,Feb
-2,BridgeLabz,17,4,15,60,Feb
-2,BridgeLabz,18,4,15,60,Feb
-2,BridgeLabz,19,0,15,0,Feb
-2,BridgeLabz,20,0,15,0,Feb
-3,BridgeLabz,1,8,15,120,Feb
-3,BridgeLabz,2,8,15,120,Feb
-3,BridgeLabz,3,0,15,0,Feb
-3,BridgeLabz,4,0,15,0,Feb
-3,BridgeLabz,5,0,15,0,Feb
-3,BridgeLabz,6,0,15,0,Feb
-3,BridgeLabz,7,4,15,60,Feb
-3,BridgeLabz,8,0,15,0,Feb
-3,BridgeLabz,9,0,15,0,Feb
-3,BridgeLabz,10,0,15,0,Feb
-3,BridgeLabz,11,0,15,0,Feb
-3,BridgeLabz,12,8,15,120,Feb
-3,BridgeLabz,13,0,15,0,Feb
-3,BridgeLabz,14,0,15,0,Feb
-3,BridgeLabz,15,8,15,120,Feb
-3,BridgeLabz,16,0,15,0,Feb
-3,BridgeLabz,17,4,15,60,Feb
-3,BridgeLabz,18,4,15,60,Feb
-3,BridgeLabz,19,0,15,0,Feb
-3,BridgeLabz,20,0,15,0,Feb
-1,BridgeLabz,1,8,15,120,Mar
-1,BridgeLabz,2,8,15,120,Mar
-1,BridgeLabz,3,0,15,0,Mar
-1,BridgeLabz,4,0,15,0,Mar
-1,BridgeLabz,5,0,15,0,Mar
-1,BridgeLabz,6,0,15,0,Mar
-1,BridgeLabz,7,4,15,60,Mar
-1,BridgeLabz,8,4,15,60,Mar
-1,BridgeLabz,9,0,15,0,Mar
-1,BridgeLabz,10,8,15,120,Mar
-1,BridgeLabz,11,4,15,60,Mar
-1,BridgeLabz,12,4,15,60,Mar
-1,BridgeLabz,13,8,15,120,Mar
-1,BridgeLabz,14,0,15,0,Mar
-1,BridgeLabz,15,8,15,120,Mar
-1,BridgeLabz,16,8,15,120,Mar
-1,BridgeLabz,17,8,15,120,Mar
-1,BridgeLabz,18,0,15,0,Mar
-1,BridgeLabz,19,0,15,0,Mar
-1,BridgeLabz,20,4,15,60,Mar
-2,BridgeLabz,1,8,15,120,Mar
-2,BridgeLabz,2,8,15,120,Mar
-2,BridgeLabz,3,0,15,0,Mar
-2,BridgeLabz,4,0,15,0,Mar
-2,BridgeLabz,5,0,15,0,Mar
-2,BridgeLabz,6,0,15,0,Mar
-2,BridgeLabz,7,4,15,60,Mar
-2,BridgeLabz,8,4,15,60,Mar
-2,BridgeLabz,9,0,15,0,Mar
-2,BridgeLabz,10,8,15,120,Mar
-2,BridgeLabz,11,4,15,60,Mar
-2,BridgeLabz,12,4,15,60,Mar
-2,BridgeLabz,13,8,15,120,Mar
-2,BridgeLabz,14,0,15,0,Mar
-2,BridgeLabz,15,8,15,120,Mar
-2,BridgeLabz,16,8,15,120,Mar
-2,BridgeLabz,17,8,15,120,Mar
-2,BridgeLabz,18,0,15,0,Mar
-2,BridgeLabz,19,0,15,0,Mar
-2,BridgeLabz,20,4,15,60,Mar
-3,BridgeLabz,1,8,15,120,Mar
-3,BridgeLabz,2,8,15,120,Mar
-3,BridgeLabz,3,0,15,0,Mar
-3,BridgeLabz,4,0,15,0,Mar
-3,BridgeLabz,5,0,15,0,Mar
-3,BridgeLabz,6,0,15,0,Mar
-3,BridgeLabz,7,4,15,60,Mar
-3,BridgeLabz,8,4,15,60,Mar
-3,BridgeLabz,9,0,15,0,Mar
-3,BridgeLabz,10,8,15,120,Mar
-3,BridgeLabz,11,4,15,60,Mar
-3,BridgeLabz,12,4,15,60,Mar
-3,BridgeLabz,13,8,15,120,Mar
-3,BridgeLabz,14,0,15,0,Mar
-3,BridgeLabz,15,8,15,120,Mar
-3,BridgeLabz,16,8,15,120,Mar
-3,BridgeLabz,17,8,15,120,Mar
-3,BridgeLabz,18,0,15,0,Mar
-3,BridgeLabz,19,0,15,0,Mar
-3,BridgeLabz,20,4,15,60,Mar
-1,BridgeLabz,1,4,15,60,Apr
-1,BridgeLabz,2,0,15,0,Apr
-1,BridgeLabz,3,0,15,0,Apr
-1,BridgeLabz,4,0,15,0,Apr
-1,BridgeLabz,5,8,15,120,Apr
-1,BridgeLabz,6,0,15,0,Apr
-1,BridgeLabz,7,0,15,0,Apr
-1,BridgeLabz,8,0,15,0,Apr
-1,BridgeLabz,9,0,15,0,Apr
-1,BridgeLabz,10,0,15,0,Apr
-1,BridgeLabz,11,0,15,0,Apr
-1,BridgeLabz,12,4,15,60,Apr
-1,BridgeLabz,13,0,15,0,Apr
-1,BridgeLabz,14,4,15,60,Apr
-1,BridgeLabz,15,4,15,60,Apr
-1,BridgeLabz,16,0,15,0,Apr
-1,BridgeLabz,17,0,15,0,Apr
-1,BridgeLabz,18,4,15,60,Apr
-1,BridgeLabz,19,0,15,0,Apr
-1,BridgeLabz,20,0,15,0,Apr
-2,BridgeLabz,1,4,15,60,Apr
-2,BridgeLabz,2,0,15,0,Apr
-2,BridgeLabz,3,0,15,0,Apr
-2,BridgeLabz,4,0,15,0,Apr
-2,BridgeLabz,5,8,15,120,Apr
-2,BridgeLabz,6,0,15,0,Apr
-2,BridgeLabz,7,0,15,0,Apr
-2,BridgeLabz,8,0,15,0,Apr
-2,BridgeLabz,9,0,15,0,Apr
-2,BridgeLabz,10,0,15,0,Apr
-2,BridgeLabz,11,0,15,0,Apr
-2,BridgeLabz,12,4,15,60,Apr
-2,BridgeLabz,13,0,15,0,Apr
-2,BridgeLabz,14,4,15,60,Apr
-2,BridgeLabz,15,4,15,60,Apr
-2,BridgeLabz,16,0,15,0,Apr
-2,BridgeLabz,17,0,15,0,Apr
-2,BridgeLabz,18,4,15,60,Apr
-2,BridgeLabz,19,0,15,0,Apr
-2,BridgeLabz,20,0,15,0,Apr
-3,BridgeLabz,1,4,15,60,Apr
-3,BridgeLabz,2,0,15,0,Apr
-3,BridgeLabz,3,0,15,0,Apr
-3,BridgeLabz,4,0,15,0,Apr
-3,BridgeLabz,5,8,15,120,Apr
-3,BridgeLabz,6,0,15,0,Apr
-3,BridgeLabz,7,0,15,0,Apr
-3,BridgeLabz,8,0,15,0,Apr
-3,BridgeLabz,9,0,15,0,Apr
-3,BridgeLabz,10,0,15,0,Apr
-3,BridgeLabz,11,0,15,0,Apr
-3,BridgeLabz,12,4,15,60,Apr
-3,BridgeLabz,13,0,15,0,Apr
-3,BridgeLabz,14,4,15,60,Apr
-3,BridgeLabz,15,4,15,60,Apr
-3,BridgeLabz,16,0,15,0,Apr
-3,BridgeLabz,17,0,15,0,Apr
-3,BridgeLabz,18,4,15,60,Apr
-3,BridgeLabz,19,0,15,0,Apr
-3,BridgeLabz,20,0,15,0,Apr
+EMP_ID, COMPANY, MONTH, DAY, HOURS_WORKED, WAGE_PER_HOUR, DAILY_WAGE
+1, PSP, Jan, 1, 0, 200, 0
+1, PSP, Jan, 2, 0, 200, 0
+1, PSP, Jan, 3, 4, 200, 800
+1, PSP, Jan, 4, 0, 200, 0
+1, PSP, Jan, 5, 0, 200, 0
+1, PSP, Jan, 6, 4, 200, 800
+1, PSP, Jan, 7, 8, 200, 1600
+1, PSP, Jan, 8, 8, 200, 1600
+1, PSP, Jan, 9, 0, 200, 0
+1, PSP, Jan, 10, 0, 200, 0
+1, PSP, Jan, 11, 0, 200, 0
+1, PSP, Jan, 12, 4, 200, 800
+1, PSP, Jan, 13, 0, 200, 0
+1, PSP, Jan, 14, 8, 200, 1600
+1, PSP, Jan, 15, 0, 200, 0
+1, PSP, Jan, 16, 0, 200, 0
+1, PSP, Jan, 17, 8, 200, 1600
+1, PSP, Jan, 18, 0, 200, 0
+1, PSP, Jan, 19, 0, 200, 0
+1, PSP, Jan, 20, 0, 200, 0
+1, PSP, Feb, 1, 0, 200, 0
+1, PSP, Feb, 2, 0, 200, 0
+1, PSP, Feb, 3, 0, 200, 0
+1, PSP, Feb, 4, 8, 200, 1600
+1, PSP, Feb, 5, 0, 200, 0
+1, PSP, Feb, 6, 0, 200, 0
+1, PSP, Feb, 7, 4, 200, 800
+1, PSP, Feb, 8, 8, 200, 1600
+1, PSP, Feb, 9, 0, 200, 0
+1, PSP, Feb, 10, 4, 200, 800
+1, PSP, Feb, 11, 0, 200, 0
+1, PSP, Feb, 12, 0, 200, 0
+1, PSP, Feb, 13, 0, 200, 0
+1, PSP, Feb, 14, 0, 200, 0
+1, PSP, Feb, 15, 0, 200, 0
+1, PSP, Feb, 16, 8, 200, 1600
+1, PSP, Feb, 17, 0, 200, 0
+1, PSP, Feb, 18, 8, 200, 1600
+1, PSP, Feb, 19, 0, 200, 0
+1, PSP, Feb, 20, 0, 200, 0
+1, PSP, Mar, 1, 8, 200, 1600
+1, PSP, Mar, 2, 8, 200, 1600
+1, PSP, Mar, 3, 8, 200, 1600
+1, PSP, Mar, 4, 4, 200, 800
+1, PSP, Mar, 5, 0, 200, 0
+1, PSP, Mar, 6, 0, 200, 0
+1, PSP, Mar, 7, 4, 200, 800
+1, PSP, Mar, 8, 8, 200, 1600
+1, PSP, Mar, 9, 0, 200, 0
+1, PSP, Mar, 10, 0, 200, 0
+1, PSP, Mar, 11, 4, 200, 800
+1, PSP, Mar, 12, 0, 200, 0
+1, PSP, Mar, 13, 0, 200, 0
+1, PSP, Mar, 14, 0, 200, 0
+1, PSP, Mar, 15, 0, 200, 0
+1, PSP, Mar, 16, 4, 200, 800
+1, PSP, Mar, 17, 4, 200, 800
+1, PSP, Mar, 18, 0, 200, 0
+1, PSP, Mar, 19, 0, 200, 0
+1, PSP, Mar, 20, 0, 200, 0
+1, PSP, Apr, 1, 8, 200, 1600
+1, PSP, Apr, 2, 0, 200, 0
+1, PSP, Apr, 3, 0, 200, 0
+1, PSP, Apr, 4, 0, 200, 0
+1, PSP, Apr, 5, 4, 200, 800
+1, PSP, Apr, 6, 0, 200, 0
+1, PSP, Apr, 7, 8, 200, 1600
+1, PSP, Apr, 8, 4, 200, 800
+1, PSP, Apr, 9, 4, 200, 800
+1, PSP, Apr, 10, 0, 200, 0
+1, PSP, Apr, 11, 0, 200, 0
+1, PSP, Apr, 12, 4, 200, 800
+1, PSP, Apr, 13, 4, 200, 800
+1, PSP, Apr, 14, 0, 200, 0
+1, PSP, Apr, 15, 0, 200, 0
+1, PSP, Apr, 16, 0, 200, 0
+1, PSP, Apr, 17, 0, 200, 0
+1, PSP, Apr, 18, 0, 200, 0
+1, PSP, Apr, 19, 4, 200, 800
+1, PSP, Apr, 20, 0, 200, 0
+1, BL, Jan, 1, 0, 25, 0
+1, BL, Jan, 2, 0, 25, 0
+1, BL, Jan, 3, 0, 25, 0
+1, BL, Jan, 4, 0, 25, 0
+1, BL, Jan, 5, 8, 25, 200
+1, BL, Jan, 6, 0, 25, 0
+1, BL, Jan, 7, 0, 25, 0
+1, BL, Jan, 8, 0, 25, 0
+1, BL, Jan, 9, 0, 25, 0
+1, BL, Jan, 10, 0, 25, 0
+1, BL, Jan, 11, 0, 25, 0
+1, BL, Jan, 12, 0, 25, 0
+1, BL, Jan, 13, 0, 25, 0
+1, BL, Jan, 14, 0, 25, 0
+1, BL, Jan, 15, 8, 25, 200
+2, BL, Jan, 1, 0, 25, 0
+2, BL, Jan, 2, 0, 25, 0
+2, BL, Jan, 3, 0, 25, 0
+2, BL, Jan, 4, 0, 25, 0
+2, BL, Jan, 5, 8, 25, 200
+2, BL, Jan, 6, 0, 25, 0
+2, BL, Jan, 7, 0, 25, 0
+2, BL, Jan, 8, 0, 25, 0
+2, BL, Jan, 9, 0, 25, 0
+2, BL, Jan, 10, 0, 25, 0
+2, BL, Jan, 11, 0, 25, 0
+2, BL, Jan, 12, 0, 25, 0
+2, BL, Jan, 13, 0, 25, 0
+2, BL, Jan, 14, 0, 25, 0
+2, BL, Jan, 15, 8, 25, 200
+1, BL, Feb, 1, 8, 25, 200
+1, BL, Feb, 2, 0, 25, 0
+1, BL, Feb, 3, 0, 25, 0
+1, BL, Feb, 4, 0, 25, 0
+1, BL, Feb, 5, 0, 25, 0
+1, BL, Feb, 6, 0, 25, 0
+1, BL, Feb, 7, 8, 25, 200
+1, BL, Feb, 8, 0, 25, 0
+1, BL, Feb, 9, 8, 25, 200
+1, BL, Feb, 10, 0, 25, 0
+1, BL, Feb, 11, 0, 25, 0
+1, BL, Feb, 12, 0, 25, 0
+1, BL, Feb, 13, 4, 25, 100
+1, BL, Feb, 14, 0, 25, 0
+1, BL, Feb, 15, 8, 25, 200
+2, BL, Feb, 1, 8, 25, 200
+2, BL, Feb, 2, 0, 25, 0
+2, BL, Feb, 3, 0, 25, 0
+2, BL, Feb, 4, 0, 25, 0
+2, BL, Feb, 5, 0, 25, 0
+2, BL, Feb, 6, 0, 25, 0
+2, BL, Feb, 7, 8, 25, 200
+2, BL, Feb, 8, 0, 25, 0
+2, BL, Feb, 9, 8, 25, 200
+2, BL, Feb, 10, 0, 25, 0
+2, BL, Feb, 11, 0, 25, 0
+2, BL, Feb, 12, 0, 25, 0
+2, BL, Feb, 13, 4, 25, 100
+2, BL, Feb, 14, 0, 25, 0
+2, BL, Feb, 15, 8, 25, 200
+1, BL, Mar, 1, 4, 25, 100
+1, BL, Mar, 2, 0, 25, 0
+1, BL, Mar, 3, 0, 25, 0
+1, BL, Mar, 4, 4, 25, 100
+1, BL, Mar, 5, 0, 25, 0
+1, BL, Mar, 6, 0, 25, 0
+1, BL, Mar, 7, 0, 25, 0
+1, BL, Mar, 8, 8, 25, 200
+1, BL, Mar, 9, 8, 25, 200
+1, BL, Mar, 10, 0, 25, 0
+1, BL, Mar, 11, 4, 25, 100
+1, BL, Mar, 12, 0, 25, 0
+1, BL, Mar, 13, 8, 25, 200
+1, BL, Mar, 14, 0, 25, 0
+1, BL, Mar, 15, 8, 25, 200
+2, BL, Mar, 1, 4, 25, 100
+2, BL, Mar, 2, 0, 25, 0
+2, BL, Mar, 3, 0, 25, 0
+2, BL, Mar, 4, 4, 25, 100
+2, BL, Mar, 5, 0, 25, 0
+2, BL, Mar, 6, 0, 25, 0
+2, BL, Mar, 7, 0, 25, 0
+2, BL, Mar, 8, 8, 25, 200
+2, BL, Mar, 9, 8, 25, 200
+2, BL, Mar, 10, 0, 25, 0
+2, BL, Mar, 11, 4, 25, 100
+2, BL, Mar, 12, 0, 25, 0
+2, BL, Mar, 13, 8, 25, 200
+2, BL, Mar, 14, 0, 25, 0
+2, BL, Mar, 15, 8, 25, 200
+1, BL, Apr, 1, 0, 25, 0
+1, BL, Apr, 2, 0, 25, 0
+1, BL, Apr, 3, 4, 25, 100
+1, BL, Apr, 4, 0, 25, 0
+1, BL, Apr, 5, 8, 25, 200
+1, BL, Apr, 6, 8, 25, 200
+1, BL, Apr, 7, 0, 25, 0
+1, BL, Apr, 8, 0, 25, 0
+1, BL, Apr, 9, 4, 25, 100
+1, BL, Apr, 10, 0, 25, 0
+1, BL, Apr, 11, 0, 25, 0
+1, BL, Apr, 12, 0, 25, 0
+1, BL, Apr, 13, 0, 25, 0
+1, BL, Apr, 14, 0, 25, 0
+1, BL, Apr, 15, 8, 25, 200
+2, BL, Apr, 1, 0, 25, 0
+2, BL, Apr, 2, 0, 25, 0
+2, BL, Apr, 3, 4, 25, 100
+2, BL, Apr, 4, 0, 25, 0
+2, BL, Apr, 5, 8, 25, 200
+2, BL, Apr, 6, 8, 25, 200
+2, BL, Apr, 7, 0, 25, 0
+2, BL, Apr, 8, 0, 25, 0
+2, BL, Apr, 9, 4, 25, 100
+2, BL, Apr, 10, 0, 25, 0
+2, BL, Apr, 11, 0, 25, 0
+2, BL, Apr, 12, 0, 25, 0
+2, BL, Apr, 13, 0, 25, 0
+2, BL, Apr, 14, 0, 25, 0
+2, BL, Apr, 15, 8, 25, 200
