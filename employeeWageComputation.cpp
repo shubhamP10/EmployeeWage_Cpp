@@ -20,12 +20,15 @@ struct Employee
     string companyName;
     int wagePerHour;
 };
+
 class Company{
     public: 
     string companyName;
     int WAGE;
     int WORK_DAYS;
     int WORKING_HOURS_PER_MONTH;
+    int totalEmployees;
+    int totalMonths = 4;
 
     Company(){}
 
@@ -36,6 +39,8 @@ class Company{
         WORKING_HOURS_PER_MONTH = hoursPerMonth;
     }
 };
+
+list<Company> companyWages;
 
 struct employeeWageResultSet
 {
@@ -164,30 +169,53 @@ list <employeeWageResultSet> readFile()
 
 void displayEmployeeData(){
     list<employeeWageResultSet> employeeList = readFile();
-    list<employeeWageResultSet> :: iterator itr;
-
+    list<Company> :: iterator company;
     int companyWage = 0;
+    int totalEmps, totalMonths, totalDays;
+    vector<int> monthlyWage;
     cout << "Enter Company Name: ";
     string companyName;
     cin >> companyName;
-
+    cout << "Read Size: " << employeeList.size() << endl;
     if(employeeList.size() != 0){
-        for(itr = employeeList.begin(); itr != employeeList.end(); itr++){
-            if((*itr).companyName == companyName){
-                cout << (*itr).companyName << "  " << (*itr).empId << "  " << (*itr).dailyWage << "  " << (*itr).month << endl;
-                // int workDays = (*itr).workDays;
-                // for(int i = 0; i < workDays; i++){
-                //     cout << (*itr).dailyWage << "  ";
-                //     companyWage += (*itr).dailyWage;
+         cout << "Inside if(disp)" << endl;
+        for(company = companyWages.begin(); company != companyWages.end(); company++){
+            cout << "Inside First For(disp)" << endl;
+            if((*company).companyName == companyName){
+               totalEmps = (*company).totalEmployees;
+               totalMonths = (*company).totalMonths;
+               totalDays = (*company).WORK_DAYS;
+            }
+        } 
+        cout << "Out of 1st For\n";
+        int count = 0;
+        for(list<employeeWageResultSet>::iterator emp = employeeList.begin(); count < employeeList.size(); emp++){
+            if((*emp).companyName == companyName){
+                int totalWage = 0;
+                for(int day = 0; day < totalDays; day++){
+                    totalWage += (*emp).dailyWage;
+                    if(day < (totalDays - 1)){
+                        emp++;
+                        count++;
+                    }
                 }
-            } // TODO Calculate Monthly Wage AND Comparision
-            // cout << (*itr).companyName << "  " << (*itr).empId << "  " << (*itr).dailyWage << "  " << (*itr).month << endl;
+                monthlyWage.push_back(totalWage);
+            }
+            else{
+                count++;
+            }
+        }
+
+        for(int emp = 0; emp < totalEmps; emp++){
+            for(int month = 0; month < totalMonths; month++){
+                cout << "\n Company: " << companyName << "\nMonth: " << (month + 1) << "\nEmp_ID: " << (emp + 1) 
+                << "\nMonthly Salary: " << monthlyWage[month] << endl; 
+            }
+        }
     }
     else{
         cout << "No Data!!!" << endl;
     }   
-
-    // cout << "Company Wage: " << companyWage << endl;
 }
 
 void insertEmployeeWageData(){
@@ -203,6 +231,7 @@ void insertEmployeeWageData(){
     int WORKING_HOURS_PER_MONTH;
     int choice, flag = 0;
     Company company;
+    companyWages.push_back(company);
     Employee employee[numOfEmp];
     EmpWageBuilder empWageBuilder;
 
@@ -226,7 +255,7 @@ void insertEmployeeWageData(){
 
                 cout << "Enter Number of Employees in Company: " << endl;
                 cin >> numOfEmp;
-                                
+                company.totalEmployees = numOfEmp;       
                 while (monthCount < 4)
                 {
                     empCount = 0;
